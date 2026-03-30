@@ -1,4 +1,44 @@
 /* Custom styles untuk efek overlay dan animasi */
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree/static/Figtree-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree/static/Figtree-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree/static/Figtree-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree/static/Figtree-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Italic contoh */
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree/static/Figtree-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, div {
+    font-family: 'Figtree', sans-serif;
+}
+
 body, p {
     color: #8D8D8C ;
 }
