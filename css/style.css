@@ -1,4 +1,8 @@
 /* Custom styles untuk efek overlay dan animasi */
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'Figtree';
   src: url('/font/Figtree/static/Figtree-Regular.ttf') format('truetype');
