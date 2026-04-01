@@ -110,7 +110,7 @@
         <!-- Content Container -->
         <div class="relative z-10 h-full flex flex-col justify-center px-6 py-12 md:px-12">
             <!-- Top Section with Title and Date -->
-            <div class="flex flex-col items-center justify-center h-full pb-20">
+            <div class="flex flex-col items-center justify-center h-full md:pb-20 pb-0">
                 <div class="h-full justify-center flex flex-col text-center">
                     <div class="flex items-center justify-center mb-0">
                         <img src="img/LOGO/Logo EduALL White 2026.png" alt="EduALL" class="md:w-30 w-15 h-auto">
@@ -132,19 +132,20 @@
                         May 9, 2026 | Jakarta, Indonesia
                     </div>
 
-                    <div class="mt-10">
+                    <div class="md:mt-10 mt-5">
                         <a href="https://www.loket.com/event/the-cornerstone-2026" target="_blank"
                             class="bg-white/90 hover:bg-white font-bold py-2 px-10 rounded text-sm transition-colors duration-300 md:text-xl text-base text-black">
                             GET YOUR TICKET
                         </a>
                     </div>
 
-                    <div class="mt-20 text-white/60">
-                        Every ticket purchased also contributes to supporting educational initiatives in underserved regions through Indonesia Mengajar.
-                    </d>
+                    <div class="mt-20 text-white/60 md:text-base text-[11px]">
+                        Every ticket purchased also contributes to supporting educational initiatives in underserved
+                        regions through Indonesia Mengajar.
+                        </d>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Sponsored By Section -->
@@ -275,249 +276,58 @@
     </section>
 
     <!-- Meet Our Speakers Section  -->
-    <section class="pt-12" id="speakers">
-        <div class="md:hidden flex w-full h-20 bg-[#183694] items-center justify-center">
-            <h2 class="leading-[1.1] text-white">
-                MEET OUR
-                <br>
-                <strong class="md:text-4xl text-xl">
-                    SPEAKERS
-                </strong>
+    <section class="pt-12 md:h-[100vh] h-[70vh] relative overflow-hidden" id="speaker">
+        <div class="text-center relative z-10">
+            <h2 class="md:text-6xl text-3xl text-white font-bold">
+                MEET OUR SPEAKERS
             </h2>
         </div>
-        <div class="flex">
-            <div class="hidden md:flex flex-col md:w-3/7 w-full">
-                <div class="flex w-full h-50 bg-[#183694] items-center justify-center">
-                    <h2 class="leading-[1.1] text-white text-2xl">
-                        MEET OUR
-                        <br>
-                        <strong class="text-6xl">
-                            SPEAKERS
-                        </strong>
-                    </h2>
+        <div class="absolute left-0 bottom-10 w-full z-10 md:px-0 px-5">
+            <div class="flex justify-center md:gap-20 gap-2 items-center">
+                <div class="text-center md:px-5 px-0">
+                    <h3 class="md:text-3xl text-[13px] text-white">
+                        THOMAS LEMBONG
+                    </h3>
+                    <div class="md:text-lg text-[8px] text-white/80 leading-[1.2]">
+                        INDONESIA'S FORMER TRADE </br> MINISTER
+                    </div>
                 </div>
 
-                <!-- SPEAKER 1 GRID -->
-                <div class="flex flex-wrap">
-                    <div class="flex w-1/2 h-70 bg-green-100">
-                        <article class="group relative overflow-hidden cursor-pointer w-full">
-                            <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                            <!-- Text Content -->
-                            <div
-                                class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                                <div class="flex w-full justify-between items-center">
-                                    <h3 class="text-[12px] font-bold text-white">Anies Baswedan</h3>
-                                    <div class="text-[10px] text-end">
-                                        <div class="text-white">Jakarta Former Governor</div>
-                                        <div class="text-white font-bold">Google DeepMind</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                <div class="text-center md:px-5 px-0">
+                    <h3 class="md:text-3xl text-[13px] text-white">
+                        ANIES BASWEDAN
+                    </h3>
+                    <div class="md:text-lg text-[8px] text-white/80 leading-[1.2]">
+                        JAKARTA'S FORMER </br> GOVERNOR
                     </div>
-                    <div class="flex w-1/2 h-70 bg-green-200">
-                        <article class="group relative overflow-hidden cursor-pointer w-full">
-                            <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                </div>
 
-                            <!-- Text Content -->
-                            <div
-                                class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                                <div class="flex w-full justify-between items-center">
-                                    <h3 class="text-[12px] font-bold text-white">Anies Baswedan</h3>
-                                    <div class="text-[10px] text-end">
-                                        <div class="text-white">Jakarta Former Governor</div>
-                                        <div class="text-white font-bold">Google DeepMind</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="flex w-1/2 h-70 bg-green-300">
-                        <article class="group relative overflow-hidden cursor-pointer w-full">
-                            <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                            <!-- Text Content -->
-                            <div
-                                class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                                <div class="flex w-full justify-between items-center">
-                                    <h3 class="text-[12px] font-bold text-white">Anies Baswedan</h3>
-                                    <div class="text-[10px] text-end">
-                                        <div class="text-white">Jakarta Former Governor</div>
-                                        <div class="text-white font-bold">Google DeepMind</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="flex w-1/2 h-70 bg-green-400">
-                        <article class="group relative overflow-hidden cursor-pointer w-full">
-                            <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                            <!-- Text Content -->
-                            <div
-                                class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                                <div class="flex w-full justify-between items-center">
-                                    <h3 class="text-[12px] font-bold text-white">Anies Baswedan</h3>
-                                    <div class="text-[10px] text-end">
-                                        <div class="text-white">Jakarta Former Governor</div>
-                                        <div class="text-white font-bold">Google DeepMind</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                <div class="text-center md:px-5 px-0">
+                    <h3 class="md:text-3xl text-[13px] text-white">
+                        NAJELAA SHIHAB
+                        <div class="md:text-lg text-[8px] text-white/80 leading-[1.2]">
+                            FOUNDER OF CIKAL </br>
+                            & BOARD OF PSPK
+                        </div>
                 </div>
             </div>
 
-            <!-- SPEAKER 2 GRID  -->
-            <div class="flex flex-col md:w-2/7 w-1/2">
-                <div class="flex w-full md:h-95 h-50 bg-red-100">
-                    <article class="group relative overflow-hidden cursor-pointer w-full">
-                        <img src="img/Speakers/tom lembong.webp" alt="Tom Lembong"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                        <!-- Text Content -->
-                        <div
-                            class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                            <div class="flex w-full justify-between items-center">
-                                <h3 class="md:text-[16px] text-[8px] font-bold text-white">Tom Lembong</h3>
-                                <div class="md:text-[14px] text-[6px] text-end">
-                                    <div class="text-white">Jakarta Former Governor</div>
-                                    <div class="text-white font-bold">Google DeepMind</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="flex w-full md:h-95 h-50 bg-red-200">
-                    <article class="group relative overflow-hidden cursor-pointer w-full">
-                        <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                        <!-- Text Content -->
-                        <div
-                            class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                            <div class="flex w-full justify-between items-center">
-                                <h3 class="md:text-[16px] text-[8px] font-bold text-white">Anies Baswedan</h3>
-                                <div class="md:text-[14px] text-[6px] text-end">
-                                    <div class="text-white">Jakarta Former Governor</div>
-                                    <div class="text-white font-bold">Google DeepMind</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- MAIN SPEAKER GRID  -->
-            <div class="flex md:w-2/7 w-1/2 md:h-190 h-100">
-                <article class="group relative overflow-hidden cursor-pointer w-full">
-                    <img src="img/Speakers/Anies.webp" alt="Aries Baswedan"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                    <!-- Text Content -->
-                    <div
-                        class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                        <div class="flex w-full justify-between items-center">
-                            <h3 class="md:text-[16px] text-[8px] font-bold text-white">Anies Baswedan</h3>
-                            <div class="md:text-[14px] text-[6px] text-end">
-                                <div class="text-white">Jakarta Former Governor</div>
-                                <div class="text-white font-bold">Google DeepMind</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+            <div class="md:text-3xl text-base text-[#9dbfd1] text-center mt-10">
+                AND MORE GREAT SPEAKERS ARE COMING!
             </div>
         </div>
-
-        <!-- SPEAKER 1 MOBILE GRID  -->
-        <div class="md:hidden flex flex-wrap">
-            <div class="flex w-1/2 h-50 bg-green-100">
-                <article class="group relative overflow-hidden cursor-pointer w-full">
-                    <img src="https://picsum.photos/seed/aries-baswedan/800/800.jpg" alt="Aries Baswedan"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                    <!-- Text Content -->
-                    <div
-                        class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                        <div class="flex w-full justify-between items-center">
-                            <h3 class="text-[8px] font-bold text-white">Anies Baswedan</h3>
-                            <div class="text-[6px] text-end">
-                                <div class="text-white">Jakarta Former Governor</div>
-                                <div class="text-white font-bold">Google DeepMind</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="flex w-1/2 h-50 bg-green-200">
-                <article class="group relative overflow-hidden cursor-pointer w-full">
-                    <img src="https://picsum.photos/seed/budi/800/800.jpg" alt="Aries Baswedan"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                    <!-- Text Content -->
-                    <div
-                        class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                        <div class="flex w-full justify-between items-center">
-                            <h3 class="text-[8px] font-bold text-white">Anies Baswedan</h3>
-                            <div class="text-[6px] text-end">
-                                <div class="text-white">Jakarta Former Governor</div>
-                                <div class="text-white font-bold">Google DeepMind</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="flex w-1/2 h-50 bg-green-300">
-                <article class="group relative overflow-hidden cursor-pointer w-full">
-                    <img src="https://picsum.photos/seed/siti/800/800.jpg" alt="Aries Baswedan"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                    <!-- Text Content -->
-                    <div
-                        class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                        <div class="flex w-full justify-between items-center">
-                            <h3 class="text-[8px] font-bold text-white">Anies Baswedan</h3>
-                            <div class="text-[6px] text-end">
-                                <div class="text-white">Jakarta Former Governor</div>
-                                <div class="text-white font-bold">Google DeepMind</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="flex w-1/2 h-50 bg-green-400">
-                <article class="group relative overflow-hidden cursor-pointer w-full">
-                    <img src="https://picsum.photos/seed/adi/800/800.jpg" alt="Aries Baswedan"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-
-                    <!-- Text Content -->
-                    <div
-                        class="absolute bottom-0 left-0 p-2 md:p-3 w-full bg-gray-800 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80">
-                        <div class="flex w-full justify-between items-center">
-                            <h3 class="text-[8px] font-bold text-white">Anies Baswedan</h3>
-                            <div class="text-[6px] text-end">
-                                <div class="text-white">Jakarta Former Governor</div>
-                                <div class="text-white font-bold">Google DeepMind</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
+        <img src="img/Speakers/Speaker banner bg.webp" alt=""
+            class="w-full h-full object-cover object-bottom md:block hidden absolute top-0 left-0 z-0">
+            <img src="img/Speakers/Speaker banner bg mobile.webp" alt=""
+            class="w-full h-full object-cover object-bottom md:hidden block absolute top-0 left-0 z-0">
     </section>
 
     <!-- Panel Discussion Section  -->
-    <section class="bg-gradient-to-b from-[#181162] to-[#020112] md:py-24 py-12 relative overflow-hidden" id="panels">
+    <section class="bg-[#f1f1f1] md:py-24 py-12 relative overflow-hidden" id="panels">
 
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <div class="md:px-28 px-5">
-                <h2 class="text-white md:text-5xl text-xl">
+                <h2 class="text-[#191265] md:text-5xl text-xl">
                     Four Panel Discussions on
                     AI & the Future We Are Building
                 </h2>
@@ -528,7 +338,7 @@
                 <div class="group hover:px-0 px-10 transition-all duration-500 ease-in-out">
                     <!-- Container Utama: Tambahkan class 'group' untuk trigger hover -->
                     <div
-                        class="bg-black/60 hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
+                        class="bg-[#191265] hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
 
                         <div class="flex gap-5 group-hover:gap-10 items-center">
 
@@ -559,10 +369,6 @@
                                         <div class="flex flex-wrap gap-5 mt-5">
                                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                                 <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Anies Baswedan</div>
-                                            </div>
-                                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                                <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
                                                 <div class="md:text-base text-[8px]">Tom Lembong</div>
                                             </div>
                                         </div>
@@ -595,7 +401,7 @@
                 <div class="group hover:px-0 px-10 transition-all duration-500 ease-in-out">
                     <!-- Container Utama: Tambahkan class 'group' untuk trigger hover -->
                     <div
-                        class="bg-black/60 hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
+                        class="bg-[#191265] hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
 
                         <div class="flex gap-5 group-hover:gap-10 items-center">
 
@@ -626,11 +432,7 @@
                                         <div class="flex flex-wrap gap-5 mt-5">
                                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                                 <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Anies Baswedan</div>
-                                            </div>
-                                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                                <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Tom Lembong</div>
+                                                <div class="md:text-base text-[8px]">Miftah Sabri</div>
                                             </div>
                                         </div>
                                     </div>
@@ -663,7 +465,7 @@
                 <div class="group hover:px-0 px-10 transition-all duration-500 ease-in-out">
                     <!-- Container Utama: Tambahkan class 'group' untuk trigger hover -->
                     <div
-                        class="bg-black/60 hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
+                        class="bg-[#191265] hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
 
                         <div class="flex gap-5 group-hover:gap-10 items-center">
 
@@ -698,7 +500,7 @@
                                             </div>
                                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                                 <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Tom Lembong</div>
+                                                <div class="md:text-base text-[8px]">Najeela Shihab</div>
                                             </div>
                                         </div>
                                     </div>
@@ -730,7 +532,7 @@
                 <div class="group hover:px-0 px-10 transition-all duration-500 ease-in-out">
                     <!-- Container Utama: Tambahkan class 'group' untuk trigger hover -->
                     <div
-                        class="bg-black/60 hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
+                        class="bg-[#191265] hover:bg-white md:py-10 py-3 md:px-10 px-3 rounded-xl md:my-5 my-2 transition-all duration-500 ease-in-out cursor-pointer shadow-lg hover:shadow-xl">
 
                         <div class="flex gap-5 group-hover:gap-10 items-center">
                             <!-- Kolom 1: Gambar -->
@@ -760,11 +562,7 @@
                                         <div class="flex flex-wrap gap-5 mt-5">
                                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                                 <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Anies Baswedan</div>
-                                            </div>
-                                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                                <i class="ri-megaphone-fill md:text-base text-[8px]"></i>
-                                                <div class="md:text-base text-[8px]">Tom Lembong</div>
+                                                <div class="md:text-base text-[8px]">Yonathan Nugroho</div>
                                             </div>
                                         </div>
                                     </div>
@@ -833,10 +631,6 @@
                         <div class="flex flex-wrap gap-5 mt-5">
                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                 <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Anies Baswedan</div>
-                            </div>
-                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                <i class="ri-megaphone-fill text-[11px]"></i>
                                 <div class="text-[11px]">Tom Lembong</div>
                             </div>
                         </div>
@@ -878,11 +672,7 @@
                         <div class="flex flex-wrap gap-5 mt-5">
                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                 <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Anies Baswedan</div>
-                            </div>
-                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Tom Lembong</div>
+                                <div class="text-[11px]">Miftah Sabri</div>
                             </div>
                         </div>
                     </div>
@@ -927,7 +717,7 @@
                             </div>
                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                 <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Tom Lembong</div>
+                                <div class="text-[11px]">Najeela Shihab</div>
                             </div>
                         </div>
                     </div>
@@ -968,11 +758,7 @@
                         <div class="flex flex-wrap gap-5 mt-5">
                             <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
                                 <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Anies Baswedan</div>
-                            </div>
-                            <div class="flex flex-nowrap text-sm gap-2 items-center text-start">
-                                <i class="ri-megaphone-fill text-[11px]"></i>
-                                <div class="text-[11px]">Tom Lembong</div>
+                                <div class="text-[11px]">Yonathan Nugroho</div>
                             </div>
                         </div>
                     </div>
@@ -1238,12 +1024,14 @@
                 </div>
 
                 <div class="md:w-1/2 w-full">
-                    <p class="md:text-lg text-[12px]">
+                    <div class="md:text-lg text-[12px] leading-[1.6]">
                         High school students are invited to take part in The Cornerstone not only as attendees, but as
                         contributors to the ideas and conversations shaping the conference.
-                    </p>
-                    <div class="md:text-[1em] text-[11px] text-blue-500 mt-2 font-semibold">
-                        Submission deadline: 10 March 2026. Shortlisted applicants will be contacted via email and
+                        <br>
+                        <span class="text-red-600 mt-2 font-semibold">
+                            Submission deadline: 10 March 2026.
+                        </span>
+                        Shortlisted applicants will be contacted via email and
                         WhatsApp.
                     </div>
                 </div>
@@ -1281,7 +1069,7 @@
                       md:group-hover:opacity-100 
                       transition duration-300 z-10">
                             <div>
-                                <h6 class="text-white text-[12px] md:text-base mb-2 text-start">
+                                <h6 class="text-white md:text-lg text-[12px] md:text-base mb-2 text-start">
                                     Share your perspective on the future of education and AI.
                                 </h6>
 
@@ -1326,7 +1114,7 @@
                       md:group-hover:opacity-100 
                       transition duration-300 z-10">
                             <div>
-                                <h6 class="text-white text-[12px] md:text-base mb-2 text-start">
+                                <h6 class="text-white md:text-lg text-[12px] md:text-base mb-2 text-start">
                                     Document key insights from the panel discussions.
                                 </h6>
 
@@ -1370,7 +1158,7 @@
                       md:group-hover:opacity-100 
                       transition duration-300 z-10">
                             <div>
-                                <h6 class="text-white text-[12px] md:text-base mb-2 text-start">
+                                <h6 class="text-white md:text-lg text-[12px] md:text-base mb-2 text-start">
                                     Showcase your ideas and projects to the conference audience.
                                 </h6>
 
@@ -1393,23 +1181,23 @@
     </section>
 
     <!-- Ticket Section  -->
-    <section class="bg-[#070a0b] relative">
-        <div class="max-w-6xl mx-auto text-start py-20 md:px-0 px-5 z-10 relative">
+    <section class="bg-[#f5f5f5] relative">
+        <div class="max-w-6xl mx-auto text-start py-20 md:px-0 px-5 z-10 md:relative hidden">
             <div class="md:flex items-center hidden">
                 <div class="w-1/2">
-                    <h2 class="md:text-5xl text-xl text-white leading-[1.1]">
+                    <h2 class="md:text-5xl text-xl text-[#191265] leading-[1.1]">
                         A Day at The <br> Cornerstone
                     </h2>
                 </div>
                 <div class="w-1/2">
-                    <div class="text-lg text-white/80">
+                    <div class="text-lg text-black/80">
                         The Cornerstone unfolds through a series of conversations where student voices and expert
                         perspectives meet to explore the future of education in the age of artificial intelligence.
                     </div>
                 </div>
             </div>
 
-            <div class="md:flex gap-10 mt-20 text-white/80 hidden">
+            <div class="md:flex gap-10 mt-20 text-[#191265]/80 hidden">
                 <div class="flex gap-3 text-xl">
                     <i class="ri-arrow-right-line me-2"></i>
                     Student Voices Lead the Conversation
@@ -1427,47 +1215,48 @@
                     Breaks for Connection
                 </div>
             </div>
+        </div>
+        <div class="relative overflow-hidden md:h-[70vh] h-[50vh] py-12 md:px-0 px-5">
+            <div class="flex justify-center h-full items-center relative z-10 max-w-6xl mx-auto">
+                <div class="w-full text-center">
+                    <h2 class="md:text-7xl text-3xl text-white leading-[1.1] font-bold">
+                        Be Part of
+                        the Conversation
+                    </h2>
 
-            <div class="bg-[#030c42]/80 hover:bg-[#0a27c7]/60 transition duration-500 mt-30 rounded-2xl py-10 px-10">
-                <div class="flex justify-center">
-                    <div class="w-full text-center">
-                        <h2 class="md:text-5xl text-2xl text-white leading-[1.1]">
-                            Be Part of
-                            the Conversation
-                        </h2>
+                    <div class="md:text-lg text-[13px] mt-5 md:px-40 px-0 text-white">
+                        Join students, educators, policymakers, and leaders to reflect on the future of education in
+                        the age of artificial intelligence.
+                    </div>
 
-                        <div class="md:text-lg text-[11px] mt-5 md:px-40 px-0 text-white">
-                            Join students, educators, policymakers, and leaders to reflect on the future of education in
-                            the age of artificial intelligence.
-                            <span class="font-semibold">
-                                Every ticket purchased also contributes to supporting educational initiatives in
-                                underserved regions
-                                through Indonesia Mengajar.
-                            </span>
-                        </div>
+                    <!-- CTA Button -->
+                    <div class="md:mt-8 mt-25">
+                        <a href="https://www.loket.com/event/the-cornerstone-2026" target="_blank"
+                            class="bg-white hover:bg-white/90 text-black font-bold py-2 px-10 rounded-xl text-sm transition-colors duration-300">
+                            GET YOUR TICKET NOW!
+                        </a>
+                    </div>
 
-                        <!-- CTA Button -->
-                        <div class="md:mt-8 mt-5">
-                            <a href="https://www.loket.com/event/the-cornerstone-2026" target="_blank"
-                                class="bg-white hover:bg-white/90 text-black font-bold py-2 px-4 rounded-xl text-sm transition-colors duration-300">
-                                GET YOUR TICKET
-                                <i class="ri-arrow-right-long-line ms-2"></i>
-                            </a>
-                        </div>
+                    <div class="md:mt-30 mt-5 text-white/80 md:text-base text-[10px]">
+                        Every ticket purchased also contributes to supporting educational initiatives in
+                        underserved regions
+                        through Indonesia Mengajar.
                     </div>
                 </div>
             </div>
 
-            <div class="text-center text-white/70 mt-5 md:block hidden">
-                T&C: By registering for this event, you consent to being contacted by the organizing team and official
-                partners. Your personal data will be handled securely.
-            </div>
+            <img src="img/CTA bg.webp" alt="EduALL" class="w-full object-cover md:block absolute hidden top-0 left-0 z-0 h-[100%]">
+            <img src="img/CTA BG mobile.webp" alt="EduALL" class="w-full object-cover md:hidden block absolute top-0 left-0 z-0 h-[100%]">
         </div>
-        <img src="img/CTA.webp" alt="EduALL" class="w-full object-cover absolute top-0 left-0 z-0 h-[100%] opacity-20">
+
+        <div class="text-center text-[#191265] mt-5 md:px-0 px-5 font-semibold md:text-base text-[10px]">
+            T&C: By registering for this event, you consent to being contacted by the organizing team and official
+            partners. Your personal data will be handled securely.
+        </div>
     </section>
 
     <!-- Media Partner Section -->
-    <section class="md:py-12 py-5 bg-white md:px-20 px-0">
+    <section class="md:py-12 py-5 bg-[#f5f5f5] md:px-20 px-0">
         <div class="text-center md:mb-6 mb-3">
             <h3 class="md:text-base text-[10px] font-semibold text-gray-800">The Media & Community</h3>
         </div>
