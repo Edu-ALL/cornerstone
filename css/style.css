@@ -101,3 +101,15 @@ body, p {
     z-index: 20;
     /* Pastikan di atas slider */
 }
+
+.slide-banner {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide-banner.active {
+    opacity: 1;
+    position: relative;
+}
