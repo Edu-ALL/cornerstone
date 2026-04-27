@@ -63,7 +63,7 @@ body, p {
 }
 
 .sponsor-track {
-    animation: slide-left 30s linear infinite;
+    animation: slide-left 45s linear infinite;
     display: flex;
     width: fit-content;
 }
