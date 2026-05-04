@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cornerstone - Total Donation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Orbitron', 'monospace'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .digit-wrapper {
+            display: inline-flex;
+            height: 1em;
+            overflow: hidden;
+            line-height: 1;
+            position: relative;
+        }
+
+        .digit-strip {
+            will-change: transform;
+            transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .digit-strip.no-transition {
+            transition: none !important;
+        }
+
+        .digit-char {
+            height: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .separator-char {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 1em;
+            line-height: 1;
+        }
+
+        @keyframes counterPulse {
+
+            0%,
+            100% {
+                text-shadow:
+                    0 0 15px rgba(147, 197, 253, 0.35),
+                    0 0 40px rgba(96, 165, 250, 0.15);
+                filter: brightness(1);
+            }
+
+            50% {
+                text-shadow:
+                    0 0 25px rgba(147, 197, 253, 0.55),
+                    0 0 60px rgba(96, 165, 250, 0.25),
+                    0 0 100px rgba(96, 165, 250, 0.1);
+                filter: brightness(1.08);
+            }
+        }
+
+        .counter-glow {
+            animation: counterPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes beamSway {
+
+            0%,
+            100% {
+                transform: rotate(-12deg) translateX(0);
+                opacity: 0.04;
+            }
+
+            50% {
+                transform: rotate(12deg) translateX(40px);
+                opacity: 0.08;
+            }
+        }
+
+        .light-beam {
+            animation: beamSway 8s ease-in-out infinite;
+        }
+
+        .light-beam-alt {
+            animation: beamSway 11s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatParticle {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-80px) scale(1.3);
+            }
+        }
+
+        .particle {
+            animation: floatParticle var(--dur) ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in-scale {
+            animation: fadeInScale 1.2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes updateFlash {
+            0% {
+                box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.4), inset 0 0 30px rgba(96, 165, 250, 0.08);
+            }
+
+            50% {
+                box-shadow: 0 0 40px 5px rgba(96, 165, 250, 0.15), inset 0 0 50px rgba(96, 165, 250, 0.05);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(96, 165, 250, 0), inset 0 0 0 rgba(96, 165, 250, 0);
+            }
+        }
+
+        .update-flash {
+            animation: updateFlash 1.2s ease-out;
+        }
+
+        @keyframes liveBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: scale(0.85);
+            }
+        }
+
+        .live-dot {
+            animation: liveBlink 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmerLoad {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .loading-bar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.05) 75%);
+            background-size: 200% 100%;
+            animation: shimmerLoad 1.5s ease-in-out infinite;
+            border-radius: 6px;
+        }
+
+        .counter-font {
+            font-size: clamp(.5rem, 7vw, 6rem);
+        }
+
+        .prefix-font {
+            font-size: clamp(1.2rem, 3.5vw, 3.2rem);
+        }
+    </style>
+</head>
+
+<body class="w-screen h-screen overflow-hidden font-body bg-[#060d1f]">
+
+    <div class="absolute inset-0 z-0">
+        <img src="img/BG 3@3x.png" alt="Background" class="w-full h-full object-cover">
+    </div>
+
+    <div class="absolute inset-0 z-[1] bg-gradient-to-b from-[#060d1f]/90 via-[#060d1f]/50 to-[#060d1f]/95"></div>
+
+    <div class="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+        <div
+            class="light-beam absolute -top-1/2 left-[15%] w-[1px] h-[250%] bg-gradient-to-b from-transparent via-blue-400/20 to-transparent">
+        </div>
+        <div
+            class="light-beam-alt absolute -top-1/2 left-[45%] w-[1px] h-[250%] bg-gradient-to-b from-transparent via-blue-300/15 to-transparent">
+        </div>
+        <div class="light-beam absolute -top-1/2 left-[70%] w-[1px] h-[250%] bg-gradient-to-b from-transparent via-blue-400/12 to-transparent"
+            style="animation-delay:-4s"></div>
+        <div class="light-beam-alt absolute -top-1/2 left-[90%] w-[1px] h-[250%] bg-gradient-to-b from-transparent via-blue-300/10 to-transparent"
+            style="animation-delay:-2s"></div>
+
+        <div class="particle absolute w-1 h-1 bg-blue-400/40 rounded-full" style="left:10%;top:60%;--dur:6s;--delay:0s">
+        </div>
+        <div class="particle absolute w-1.5 h-1.5 bg-blue-300/30 rounded-full"
+            style="left:25%;top:70%;--dur:8s;--delay:1s"></div>
+        <div class="particle absolute w-1 h-1 bg-blue-400/35 rounded-full" style="left:55%;top:55%;--dur:7s;--delay:2s">
+        </div>
+        <div class="particle absolute w-1.5 h-1.5 bg-blue-300/25 rounded-full"
+            style="left:75%;top:65%;--dur:9s;--delay:0.5s"></div>
+        <div class="particle absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            style="left:88%;top:75%;--dur:6.5s;--delay:3s"></div>
+        <div class="particle absolute w-1 h-1 bg-blue-300/35 rounded-full"
+            style="left:40%;top:80%;--dur:7.5s;--delay:1.5s"></div>
+    </div>
+
+    <div class="relative z-10 w-full h-full flex flex-col">
+
+        <div class="flex justify-between items-center px-6 md:px-16 py-5 md:py-2 fade-in-up">
+            <div class="text-white font-bold text-lg md:text-2xl tracking-[0.25em] uppercase">
+                <img src="img/LOGO/Logo EduALL White 2026.png" alt="" class="w-[25%]">
+            </div>
+            <div class="text-white/60 font-semibold text-[0.65rem] md:text-sm tracking-[0.2em] uppercase flex justify-end">
+                <img src="img/LOGO/Logo IM Panjang - Putih.png" alt="" class="w-[25%]">
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center px-4">
+
+            <div class="fade-in-up text-center" style="animation-delay:0.15s">
+                <h1 class="text-3xl md:text-6xl font-bold text-white mb-2 md:mb-0">
+                    <span class="font-extralight md:text-3xl text-xl">
+                        T &nbsp; &nbsp; &nbsp; H &nbsp; &nbsp; &nbsp; E
+                    </span>
+                    </br>
+                    CORNERSTONE
+                </h1>
+            </div>
+
+            <div class="fade-in-up mt-4" style="animation-delay:0.3s">
+                <h1
+                    class="text-white text-xl md:text-2xl font-light tracking-[0.3em] uppercase mb-8 md:mb-7">
+                    Total Donation</h1>
+            </div>
+
+            <div class="fade-in-scale" style="animation-delay:0.5s">
+                <div class="relative px-5 md:px-14 py-4 md:py-8 rounded-2xl" id="counter-box">
+                    <div
+                        class="absolute inset-0 rounded-2xl bg-white/[0.03] border border-white/[0.07] backdrop-blur-sm">
+                    </div>
+                    <div class="absolute inset-0 rounded-2xl" style="box-shadow:inset 0 0 80px rgba(59,130,246,0.04)">
+                    </div>
+
+                    <div class="relative flex items-baseline justify-center gap-2 md:gap-4">
+                        <span class="prefix-font text-blue-200/60 font-display font-bold select-none">Rp</span>
+
+                        <div class="flex items-center font-display counter-font font-black text-white counter-glow leading-none"
+                            id="counter-display">
+
+                            <div id="loading-state" class="flex items-center gap-2">
+                                <div class="loading-bar w-10 md:w-16 h-6 md:h-10"></div>
+                                <div class="loading-bar w-10 md:w-16 h-6 md:h-10"></div>
+                                <div class="loading-bar w-8 md:w-12 h-6 md:h-10"></div>
+                                <span class="text-white/20 text-2xl md:text-5xl mx-1">.</span>
+                                <div class="loading-bar w-10 md:w-16 h-6 md:h-10"></div>
+                                <div class="loading-bar w-10 md:w-16 h-6 md:h-10"></div>
+                                <div class="loading-bar w-10 md:w-16 h-6 md:h-10"></div>
+                            </div>
+
+                            <div id="digit-container" class="hidden items-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center px-6 py-4 md:py-7 fade-in-up" style="animation-delay:0.85s">
+            <div class="flex items-center justify-center w-full gap-2 text-white/20 text-[0.6rem] md:text-xs tracking-wider">
+                <img src="img/Logo in LED.png" alt="" class="w-[75%] -mt-[12%]">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var API_URL = 'https://script.google.com/macros/s/AKfycbwC3_-d7x3jmdIbRX2fO64ZKVNgpLqE6EEYEakYAK_PttZa9Jp04fQZtHQkd7ufwGzU/exec';
+        var REFRESH = 30000;
+        var DEMO = false;
+
+        var prevFmt = '', first = true;
+
+        function fmt(n) {
+            return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        function mkRoller(target, old) {
+            var w = document.createElement('div');
+            w.className = 'digit-wrapper';
+            var s = document.createElement('div');
+            s.className = 'digit-strip';
+            for (var x = 0; x < 30; x++) {
+                var c = document.createElement('div');
+                c.className = 'digit-char';
+                c.textContent = x % 10;
+                s.appendChild(c);
+            }
+            w.appendChild(s);
+
+            // Pertama kali: mulai dari 0 supaya ada animasi gulir
+            var st;
+            if (old !== null && old !== undefined) {
+                st = old;
+            } else {
+                st = 0;
+            }
+
+            s.classList.add('no-transition');
+            s.style.transform = 'translateY(-' + (10 + st) + 'em)';
+            return { w: w, s: s, st: st, tg: target };
+        }
+
+        function mkSep() {
+            var e = document.createElement('div');
+            e.className = 'separator-char';
+            e.textContent = '.';
+            return e;
+        }
+
+        function render(num) {
+            var box = document.getElementById('counter-box');
+            var skel = document.getElementById('loading-state');
+            var ctr = document.getElementById('digit-container');
+            var lastUpdated = document.getElementById('last-updated');
+
+            if (first) {
+                skel.classList.add('hidden');
+                ctr.classList.remove('hidden');
+                ctr.classList.add('flex');
+                first = false;
+            }
+
+            var nf = fmt(num), nc = nf.split(''), pc = prevFmt.split('');
+            var frag = document.createDocumentFragment(), rolls = [];
+            var totalD = nc.filter(function (c) { return c !== '.'; }).length;
+
+            nc.forEach(function (ch, i) {
+                if (ch === '.') {
+                    frag.appendChild(mkSep());
+                    rolls.push(null);
+                } else {
+                    var t = parseInt(ch), o = null;
+                    if (i < pc.length && pc[i] !== '.') o = parseInt(pc[i]);
+                    var r = mkRoller(t, o);
+                    frag.appendChild(r.w);
+                    // Stagger dari kiri ke kanan saat pertama kali, kanan ke kiri saat update
+                    var digitIdx = nc.slice(0, i + 1).filter(function (c) { return c !== '.'; }).length;
+                    var dl;
+                    if (prevFmt === '') {
+                        // First load: kiri ke kanan (cascade masuk)
+                        dl = (digitIdx - 1) * 90;
+                    } else {
+                        // Update: kanan ke kiri
+                        dl = Math.max(0, totalD - digitIdx) * 70;
+                    }
+                    rolls.push({ s: r.s, st: r.st, tg: t, dl: dl });
+                }
+            });
+
+            ctr.innerHTML = '';
+            ctr.appendChild(frag);
+
+            // Delay sedikit biar skeleton sudah hilang dulu
+            setTimeout(function () {
+                requestAnimationFrame(function () {
+                    rolls.forEach(function (d) {
+                        if (!d) return;
+                        d.s.classList.remove('no-transition');
+                        var pos = d.tg >= d.st ? (10 + d.tg) : (20 + d.tg);
+                        d.s.style.transitionDelay = d.dl + 'ms';
+                        d.s.style.transform = 'translateY(-' + pos + 'em)';
+                        setTimeout(function () {
+                            d.s.classList.add('no-transition');
+                            d.s.style.transitionDelay = '0ms';
+                            d.s.style.transform = 'translateY(-' + (10 + d.tg) + 'em)';
+                            requestAnimationFrame(function () {
+                                requestAnimationFrame(function () { d.s.classList.remove('no-transition'); });
+                            });
+                        }, 1150 + d.dl);
+                    });
+                });
+            }, 50);
+
+            prevFmt = nf;
+            box.classList.remove('update-flash');
+            void box.offsetWidth;
+            box.classList.add('update-flash');
+
+            // Update timestamp
+            if (lastUpdated) {
+                var now = new Date();
+                var timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                lastUpdated.textContent = 'Terakhir diperbarui: ' + timeStr;
+            }
+        }
+
+        function loadData() {
+            if (DEMO) {
+                render(875000);
+                return;
+            }
+            window.fetch(API_URL)
+                .then(function (r) { return r.json(); })
+                .then(function (j) {
+                    var n = Number(j.total);
+                    if (isNaN(n) || n < 0) throw 0;
+                    render(n);
+                })
+                .catch(function () {
+                    if (first) render(0);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadData();
+            setInterval(loadData, REFRESH);
+        });
+    </script>
+</body>
+
+</html>
